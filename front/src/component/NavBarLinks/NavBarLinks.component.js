@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import {StyledNavUl, StyledNavLi, StyledNavLink} from './NavBarLinks.styled'
 import { v4 as uuid } from 'uuid';
 import client from '../../util/apollo-client';
 import { getCategories} from '../../query/queries-graphql';
@@ -27,12 +28,14 @@ class NavBarLinks extends PureComponent {
         console.log(this.state.categories)
         const {categories} = this.state;
         return (
-            <ul>
+            <StyledNavUl>
                 {categories.map(({name}) => (
-                    <li key={uuid()}>{name}</li>
+                    <StyledNavLi key={uuid()}>
+                        <StyledNavLink>{name}</StyledNavLink>
+                    </StyledNavLi>
 
                 ))}
-            </ul>
+            </StyledNavUl>
         );
     }
 }

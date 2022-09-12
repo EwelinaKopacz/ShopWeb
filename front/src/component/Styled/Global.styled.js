@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
         --fs-prod-details: 1.8rem;
         --fs-text-outofstock:2.4rem;
 
-        font-family: 'Releway',sans-serif;
+        font-family: 'Raleway',sans-serif;
         scroll-behavior: smooth;
         overflow-y: scroll;
     }
