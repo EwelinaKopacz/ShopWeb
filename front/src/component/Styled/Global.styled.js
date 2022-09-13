@@ -30,12 +30,12 @@ const GlobalStyle = createGlobalStyle`
         --fs-prod-details: 1.8rem;
         --fs-text-outofstock:2.4rem;
 
-        font-family: 'Raleway',sans-serif;
         scroll-behavior: smooth;
         overflow-y: scroll;
     }
 
     body {
+        font-family:'Raleway', sans-serif;
         min-height: 100%;
         font-size: 1.6rem;
         color:var(--clr-black);

@@ -1,12 +1,16 @@
 import React, { PureComponent } from 'react';
+import StyledNavIconsDiv from './NavBarIcons.styled';
+import NavBarCurr from '../NavBarCurr/index';
+import NavBarCart from '../NavBarCart/index';
 
 
 class NavBarIcons extends PureComponent {
     render() {
         return (
-            <div>
-                Icons
-            </div>
+            <StyledNavIconsDiv>
+                <NavBarCurr/>
+                <NavBarCart/>
+            </StyledNavIconsDiv>
         );
     }
 }

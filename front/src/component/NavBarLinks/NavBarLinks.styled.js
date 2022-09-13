@@ -13,7 +13,7 @@ const StyledNavLi = styled.li`
 `;
 
 const StyledNavLink = styled.a`
-    font-weight: var( --fw-regular);
+    font-weight: var(--fw-regular);
     font-size: var(--fs-menu-link);
     font-style: normal;
     line-height: 120%;
@@ -22,6 +22,7 @@ const StyledNavLink = styled.a`
     text-transform: uppercase;
     width: auto;
     height: 2rem;
+    cursor: pointer;
 `;
 
 export {StyledNavUl, StyledNavLi, StyledNavLink}
