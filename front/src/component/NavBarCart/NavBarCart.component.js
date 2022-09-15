@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
+import emptyCartIcon from '../../assets/empty-cart.png';
+import { StyledCartDiv, StyledCartImg } from './NavBarCart.styled';
 
 class NavBarCart extends PureComponent {
     render() {
         return (
-            <div>Cart </div>
+            <StyledCartDiv>
+                <StyledCartImg src={emptyCartIcon} alt="empty cart icon"/>
+            </StyledCartDiv>
         );
     }
 }

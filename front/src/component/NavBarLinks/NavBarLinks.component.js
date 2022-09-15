@@ -25,7 +25,6 @@ class NavBarLinks extends PureComponent {
     }
 
     render() {
-        console.log(this.state.categories)
         const {categories} = this.state;
         return (
             <StyledNavUl>

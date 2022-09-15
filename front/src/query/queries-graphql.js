@@ -7,3 +7,15 @@ export const getCategories = gql`
         }
     }
 `;
+
+export const getAllProducts = gql`
+    query {
+        category {
+            products {
+                name
+                description
+                gallery
+        }
+    }
+}
+`;
