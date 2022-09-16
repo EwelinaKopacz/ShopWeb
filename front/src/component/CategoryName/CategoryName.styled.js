@@ -11,6 +11,7 @@ const StyledH2 = styled.h2`
     line-height: 160%;
     color:var(--clr-text);
     margin:4rem 0 6rem 0;
+    text-transform: capitalize;
 `;
 
 export default StyledH2;

@@ -5,6 +5,8 @@ import CategoryName from '../CategoryName/index.js';
 import client from '../../util/apollo-client';
 import { getAllProducts } from '../../query/queries-graphql';
 
+import { connect } from 'react-redux';
+
 import StyledProductSection from './CategoryPage.styled';
 
 class CategoryPage extends PureComponent {
@@ -28,20 +30,27 @@ class CategoryPage extends PureComponent {
 
     render() {
         const {products} = this.state;
-      return (
-        <>
-            <CategoryName catName='All'/>
-            <StyledProductSection>
-            {products.map((product) => 
-                <ProductCard
-                    key={product.id}
-                    item={product}
-                />
-            )}
-            </StyledProductSection>
-        </>
-    );
+        const {pickedCategory} = this.props;
+        return (
+            <>
+                {pickedCategory ? <CategoryName catName={pickedCategory}/> : <CategoryName catName='All'/> }
+                <StyledProductSection>
+                {products.map((product) =>
+                    <ProductCard
+                        key={product.id}
+                        item={product}
+                    />
+                )}
+                </StyledProductSection>
+            </>
+        );
     }
   }
 
-  export default CategoryPage;
+  const mapStateToProps = (state) => {
+      return {
+        pickedCategory: state.category,
+      }
+  }
+
+  export default connect (mapStateToProps, null) (CategoryPage);
