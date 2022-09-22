@@ -19,16 +19,19 @@ class ProductsList extends PureComponent {
         const {pickedCategory} = this.props;
         const {currCategory} = this.state;
         if(currCategory !== pickedCategory){
-            this.setState({
-                currCategory:pickedCategory
-            })
+            this.updateCategory(pickedCategory);
             this.fetchProducts();
         }
     }
 
+    updateCategory(newCategory){
+        this.setState({
+            currCategory:newCategory
+        })
+    }
+
     async fetchProducts(){
         const {pickedCategory} = this.props;
-        console.log(pickedCategory);
         const response = await client.query({
             query:getProductsByCategory,
             variables: {title:pickedCategory}
@@ -41,7 +44,7 @@ class ProductsList extends PureComponent {
 
     render(){
         const {products} = this.state;
-        console.log(products);
+        console.log(products)
         return (
             <StyledProductsList>
                 {products.map((product) =>

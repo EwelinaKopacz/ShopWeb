@@ -1,5 +1,6 @@
 const initState = {
-    category: ''
+    category: '',
+    currency: '',
 }
 
 const reducer = (state = initState, action) => {
@@ -9,6 +10,13 @@ const reducer = (state = initState, action) => {
                 ...state,
                 category: action.payload.value
         };
+
+        case 'setSelectedCurrency':
+            return {
+                ...state,
+                currency: action.payload.value
+        }
+
         default:
             return state;
     }

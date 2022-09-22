@@ -6,3 +6,12 @@ export const setCategory = value => {
         },
     }
 }
+
+export const setCurrency = value => {
+    return {
+        type: 'setSelectedCurrency',
+        payload: {
+            value:value
+        },
+    }
+}

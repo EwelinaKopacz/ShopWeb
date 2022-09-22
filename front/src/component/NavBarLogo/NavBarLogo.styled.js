@@ -7,6 +7,7 @@ const StyledLogoDiv = styled.div`
     left: calc(50% - 41px/2);
     top: calc(50% - 41px/2 + 4.5px);
     bottom: 0%;
+    cursor: pointer;
 `
 
 const StyledLogoImg = styled.img`

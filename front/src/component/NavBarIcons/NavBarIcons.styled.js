@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledNavIconsDiv = styled.div`
-    border:1px solid green;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

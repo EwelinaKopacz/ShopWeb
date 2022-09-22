@@ -52,7 +52,7 @@ class NavBarLinks extends PureComponent {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addPickedCategory: (value) => dispatch(setCategory(value))
+    addPickedCategory:(value) => dispatch(setCategory(value))
 })
 
 export default connect (null, mapDispatchToProps)(NavBarLinks);
