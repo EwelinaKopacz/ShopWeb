@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         --clr-shop-icon:#43464E;
         --clr-text-outofstock:#8D8F9A;
         --clr-logo-bg:#1DCF65;
+        --clr-hover-curr:#EEEEEE;
 
         // fonts weight
         --fw-regular:400;

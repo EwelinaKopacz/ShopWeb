@@ -9,7 +9,8 @@ import { getProductsByCategory } from '../../query/queries-graphql';
 class ProductsList extends PureComponent {
     state = {
         products: [],
-        currCategory: ""
+        currCategory: "",
+       
     }
     componentDidMount(){
         this.fetchProducts();
@@ -44,7 +45,6 @@ class ProductsList extends PureComponent {
 
     render(){
         const {products} = this.state;
-        console.log(products)
         return (
             <StyledProductsList>
                 {products.map((product) =>

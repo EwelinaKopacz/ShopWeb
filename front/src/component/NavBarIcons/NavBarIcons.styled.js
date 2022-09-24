@@ -6,8 +6,8 @@ const StyledNavIconsDiv = styled.div`
     justify-content: flex-end;
     align-items: center;
     padding: 0px;
-    gap: 22px;
-    width: auto;
+    gap: 2.2rem;
+    width: 20.4rem;
     height: 4rem;
 `;
 
