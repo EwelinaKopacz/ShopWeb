@@ -40,7 +40,6 @@ const StyledCurrModal = styled.div`
 const StyledCurrOptions = styled.ul`
     position: absolute;
     top:65px;
-    left:991px;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -63,6 +62,7 @@ const StyledCurrOptionsItems = styled.li`
     align-items: center;
     padding: 0px;
     gap: 1rem;
+    cursor: pointer;
 
     &:hover {
         background-color: var(--clr-hover-curr);
@@ -70,7 +70,7 @@ const StyledCurrOptionsItems = styled.li`
 `;
 
 const StyledCurrOptionsSymbol = styled(StyledCurrSymbol)`
-    padding-left:2rem;
+    padding-left:1rem;
     text-align: right;
 `;
 

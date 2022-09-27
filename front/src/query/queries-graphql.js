@@ -28,16 +28,24 @@ export const getProductsByCategory = gql`
             id
             name
             gallery
+            description
+            prices {
+                currency {
+                    label
+                    symbol
+                }
+                amount
+              }
+            }
         }
     }
-}
 `;
 
 export const getCurrencies = gql`
     query getCurrencies {
         currencies {
-        label
-        symbol
+            label
+            symbol
+        }
     }
-}
 `;

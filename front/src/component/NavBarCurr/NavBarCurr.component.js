@@ -25,12 +25,12 @@ class NavBarCurr extends PureComponent {
     }
 
     async getCurrencies(){
-        const {addDefaultCurrency} = this.props;
+        const {addPickedCurrency} = this.props;
         const response = await client.query({
             query:getCurrencies
         })
         const defaultCurr = response.data.currencies[0].symbol;
-        addDefaultCurrency(defaultCurr);
+        addPickedCurrency(defaultCurr);
 
         const allCurr = response.data.currencies;
         this.setState({
@@ -59,7 +59,7 @@ class NavBarCurr extends PureComponent {
 
                 <StyledCurrOptions active={showModal}>
                     {allCurrencies.map(item=>(
-                    <StyledCurrOptionsItems key={item.symbol}>
+                    <StyledCurrOptionsItems key={item.symbol} >
                         <StyledCurrOptionsSymbol>{item.symbol}</StyledCurrOptionsSymbol>
                         <StyledCurrOptionsLabel>{item.label}</StyledCurrOptionsLabel>
                     </StyledCurrOptionsItems>
@@ -72,7 +72,7 @@ class NavBarCurr extends PureComponent {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addDefaultCurrency:(value) => dispatch(setCurrency(value))
+    addPickedCurrency:(value) => dispatch(setCurrency(value))
 })
 
 const mapStateToProps = state => {

@@ -10,8 +10,8 @@ class ProductsList extends PureComponent {
     state = {
         products: [],
         currCategory: "",
-       
     }
+
     componentDidMount(){
         this.fetchProducts();
     }
@@ -39,7 +39,7 @@ class ProductsList extends PureComponent {
         })
 
         this.setState({
-            products: [...response.data.category.products]
+            products: [...response.data.category.products],
         })
     }
 
@@ -51,6 +51,7 @@ class ProductsList extends PureComponent {
                     <ProductCard
                         key={product.id}
                         item={product}
+                        prices={product.prices}
                     />
                 )}
             </StyledProductsList>

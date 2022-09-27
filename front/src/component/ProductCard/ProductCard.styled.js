@@ -35,10 +35,17 @@ const StyledProductName = styled.p`
     font-weight: var(--fw-light);
     font-size: var(--fs-prod-details);
     line-height: 160%;
-    display: flex;
-    align-items: center;
+    color: var(--clr-text);
+`;
+
+const StyledProductPrice = styled.p`
+    font-style: normal;
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-prod-details);
+    line-height: 160%;
+    color: var(--clr-text);
+    text-align: right;
 `;
 
 
-
-export { StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName };
+export { StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName, StyledProductPrice };
