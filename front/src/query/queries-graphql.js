@@ -8,34 +8,35 @@ export const getCategories = gql`
     }
 `;
 
-// NIE UZYWAM TEGO ZAPYTANIA
-// export const getAllProducts = gql`
-//     query getAllProducts {
-//         category {
-//             products {
-//                 name
-//                 description
-//                 gallery
-//             }
-//         }
-//     }
-// `;
 
 export const getProductsByCategory = gql`
     query getProductsByCategory($title: String!) {
         category(input: { title: $title }) {
-        products {
-            id
-            name
-            gallery
-            description
-            prices {
-                currency {
-                    label
-                    symbol
+            products {
+                id
+                name
+                inStock
+                gallery
+                description
+                category
+                attributes{
+                  id
+                  name
+                  type
+                  items {
+                    displayValue
+                    value
+                    id
+                  }
                 }
-                amount
-              }
+                prices {
+                    currency {
+                        label
+                        symbol
+                    }
+                    amount
+                  }
+                brand
             }
         }
     }

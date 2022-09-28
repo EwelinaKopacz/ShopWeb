@@ -10,7 +10,7 @@ import { setCategory } from '../../actions';
 class NavBarLinks extends PureComponent {
         state = {
             selectedCat: '', // to chyba nie jest potrzebne ?
-            categories: []
+            categories: [],
         }
 
     componentDidMount(){
@@ -27,7 +27,7 @@ class NavBarLinks extends PureComponent {
         })
     }
 
-    setSelectedCategory(e){
+    handleClick(e){
         const {addPickedCategory} = this.props;
         const selectedCategory = e.target.name
         this.setState({
@@ -42,7 +42,7 @@ class NavBarLinks extends PureComponent {
             <StyledNavUl>
                 {categories.map(({name}) => (
                     <StyledNavLi key={uuid()}>
-                        <StyledNavLink onClick={this.setSelectedCategory.bind(this)} name={name}>{name}</StyledNavLink> 
+                        <StyledNavLink onClick={this.handleClick.bind(this)} name={name} >{name}</StyledNavLink> 
                     </StyledNavLi>
 
                 ))}

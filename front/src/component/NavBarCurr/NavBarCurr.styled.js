@@ -4,6 +4,7 @@ const StyledCurrWrapper = styled.div`
    width: 38px;
    height: 29px;
    display: flex;
+   z-index: 1000;
 `;
 
 const StyledCurrBox = styled.div`
