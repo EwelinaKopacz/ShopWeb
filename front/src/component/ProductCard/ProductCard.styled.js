@@ -95,12 +95,11 @@ const StyledOverlayOutOfStockText = styled.span`
     bottom: 50%;
 
     text-transform: uppercase;
-    font-family: 'Raleway';
     font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-text-outofstock);
     line-height: 38px;
-    color: #8D8F9A;
+    color: var(--clr-text-outofstock);
 
 `;
 
