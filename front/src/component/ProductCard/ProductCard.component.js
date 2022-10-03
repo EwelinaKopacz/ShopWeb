@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv,
          StyledProductImg, StyledProductContentDiv, StyledProductName,
-         StyledProductPrice, StyledCartBtn, StyledOverlayOutOfStock,
-         StyledOverlayOutOfStockText
+         StyledProductPrice, StyledCartBtn, StyledBtnImg,
+         StyledOverlayOutOfStock, StyledOverlayOutOfStockText
         } from './ProductCard.styled';
 
-import {ReactComponent as CartIcon} from '../../assets/circle-icon-cart.svg';
+import emptyCartIcon from '../../assets/empty-cart-white.svg';
+
 
 class ProductCard extends PureComponent {
     state = {
@@ -48,9 +49,9 @@ class ProductCard extends PureComponent {
                         <StyledProductPrice>{this.renderPrices()}</StyledProductPrice>
                     </StyledProductContentDiv>
 
-                    {hover && item.inStock && (
+                    {hover && item.inStock && ( // zastanowic sie czy nie zrobic komponentu dla btn cart
                             <StyledCartBtn>
-                                <CartIcon/>
+                                <StyledBtnImg src={emptyCartIcon} alt="empty cart icon"/>
                             </StyledCartBtn>
                     )}
 

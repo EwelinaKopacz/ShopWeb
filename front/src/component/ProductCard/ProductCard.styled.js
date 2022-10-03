@@ -6,42 +6,37 @@ const StyledProductDiv = styled.div`
     align-items: center;
     padding: 0px;
     cursor: pointer;
+
     &:hover{
         filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
     }
 `;
 
 const StyledProductCardDiv = styled.div`
-    border:.5px solid blue;
     position:relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    align-self: stretch;
     padding: 1.6rem;
     background-color: var(--clr-white);
+
     &:hover{
         box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
     }
 `;
 
 const StyledProductImgDiv = styled.div`
-    border:.5px solid blue;
     height: 330px;
     align-self: stretch;
     margin-bottom: 2.4rem;
-
-    &:hover{
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
+    overflow:hidden;
 `;
 
 const StyledProductImg = styled.img`
-    min-width: 100%;
-    max-height: 100%;
+    display: block;
+    width: 100vw;
     object-fit: contain;
-
 `;
 
 const StyledProductContentDiv = styled.div`
@@ -69,14 +64,28 @@ const StyledProductPrice = styled.p`
     text-align: right;
 `;
 
-const StyledCartBtn = styled.div`
+const StyledCartBtn = styled.button`
     position: absolute;
+    right: 30px;
+    bottom: 70px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
     width: 52px;
     height: 52px;
-    right: 20px;
-    bottom: 70px;
-
+    display: flex;
+    justify-content: center;
+    align-items:center;
     filter: drop-shadow(0px 4px 11px rgba(29, 31, 34, 0.1));
+
+`;
+
+const StyledBtnImg = styled.img`
+    svg {
+        width: 24px;
+        height: 24px;
+        fill:var(--clr-white);
+    }
 `;
 
 const StyledOverlayOutOfStock = styled.div`
@@ -106,4 +115,4 @@ const StyledOverlayOutOfStockText = styled.span`
 `;
 
 
-export { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName, StyledProductPrice,StyledCartBtn, StyledOverlayOutOfStock,StyledOverlayOutOfStockText };
+export { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName, StyledProductPrice,StyledCartBtn, StyledOverlayOutOfStock,StyledOverlayOutOfStockText,StyledBtnImg };
