@@ -20,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
         --clr-hover-curr:#EEEEEE;
 
         // fonts weight
-        --fw-regular:400;
         --fw-light:300;
+        --fw-regular:400;
         --fw-medium:500;
         --fw-semi-bold:600;
 
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family:'Raleway', sans-serif;
+        font-family: 'Raleway', sans-serif;
         min-height: 100%;
         font-size: 1.6rem;
         color:var(--clr-black);
