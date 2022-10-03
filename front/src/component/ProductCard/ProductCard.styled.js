@@ -12,6 +12,7 @@ const StyledProductDiv = styled.div`
 `;
 
 const StyledProductCardDiv = styled.div`
+    border:.5px solid blue;
     position:relative;
     display: flex;
     flex-direction: column;
@@ -26,13 +27,14 @@ const StyledProductCardDiv = styled.div`
 `;
 
 const StyledProductImgDiv = styled.div`
+    border:.5px solid blue;
     height: 330px;
     align-self: stretch;
     margin-bottom: 2.4rem;
 
-    /* &:hover{
+    &:hover{
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    } */
+    }
 `;
 
 const StyledProductImg = styled.img`
