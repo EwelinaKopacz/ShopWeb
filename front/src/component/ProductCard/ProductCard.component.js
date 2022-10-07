@@ -29,7 +29,6 @@ class ProductCard extends PureComponent {
         this.setState({hover:false})
     }
 
-
     render(){
         const {item} = this.props;
         const {hover}= this.state;

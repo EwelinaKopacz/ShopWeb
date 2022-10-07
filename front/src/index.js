@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
 import client from './util/apollo-client';
 import { ApolloProvider } from '@apollo/client';
 import App from './component/App';
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
         <Provider store={store}>
-          <App/>
+          <BrowserRouter>
+            <App/>
+          </BrowserRouter>
         </Provider>
     </ApolloProvider>
   </React.StrictMode>

@@ -1,4 +1,5 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const StyledNavUl = styled.ul`
    height: 5.6rem;
@@ -9,8 +10,10 @@ const StyledNavUl = styled.ul`
    padding: 0px;
 `;
 
-const StyledNavLink = styled.a`
+const StyledNavLink = styled(NavLink)`
     display: inline-block;
+    height: 5.2rem;
+    padding: 4px 16px;
     font-weight: var(--fw-regular);
     font-size: var(--fs-menu-link);
     font-style: normal;
@@ -18,25 +21,23 @@ const StyledNavLink = styled.a`
     color:var(--clr-text);
     text-align: center;
     text-transform: uppercase;
-    height: 2rem;
-    cursor: pointer;
-
-`;
-
-const StyledNavLi = styled.li`
-    height: 5.2rem;
-    padding: 4px 16px;
-    position: relative;
     cursor: pointer;
 
     &:hover {
-        border-bottom: 2px solid var(--clr-primary);
-        margin-bottom:-2px;
-    }
-    &:hover ${StyledNavLink} {
         color:var(--clr-primary);
-        /* font-weight: var(--fw-semi-bold); */
+        border-bottom: 2px solid var(--clr-primary);
+        font-weight: var(--fw-semi-bold);
     }
+    &.active {
+        color:var(--clr-primary);
+        border-bottom: 2px solid var(--clr-primary);
+        font-weight: var(--fw-semi-bold);
+    }
+`;
+
+const StyledNavLi = styled.li`
+    position: relative;
+    cursor: pointer;
 `;
 
 export {StyledNavUl, StyledNavLi, StyledNavLink}

@@ -42,9 +42,14 @@ class NavBarLinks extends PureComponent {
             <StyledNavUl>
                 {categories.map(({name}) => (
                     <StyledNavLi key={uuid()}>
-                        <StyledNavLink onClick={this.handleClick.bind(this)} name={name} >{name}</StyledNavLink> 
+                        <StyledNavLink
+                            to={`/category/${name}`}
+                            activeClassName="active"
+                            onClick={this.handleClick.bind(this)}
+                            name={name}>
+                            {name}
+                        </StyledNavLink>
                     </StyledNavLi>
-
                 ))}
             </StyledNavUl>
         );
@@ -56,6 +61,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect (null, mapDispatchToProps)(NavBarLinks);
-
-// INNE:
-// Klikanie tylko w link <a></a> powoduje zmianę, problem jest bo nie działa na klika z li

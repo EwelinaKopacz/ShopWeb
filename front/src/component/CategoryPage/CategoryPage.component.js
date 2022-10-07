@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import CategoryName from '../CategoryName';
 import ProductsList from '../ProductsList';
 import { connect } from 'react-redux';
+import StyledCategoryPage from "./CategoryPage.styled";
 
 
 class CategoryPage extends PureComponent {
@@ -25,10 +26,10 @@ class CategoryPage extends PureComponent {
     render() {
         const {pickedCategory} = this.props;
         return (
-            <>
+            <StyledCategoryPage>
                 {pickedCategory ? <CategoryName catName={pickedCategory}/> : <CategoryName catName='All'/> }
                 <ProductsList/>
-            </>
+            </StyledCategoryPage>
         );
     }
   }
