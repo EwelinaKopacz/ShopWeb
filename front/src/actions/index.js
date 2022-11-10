@@ -15,3 +15,14 @@ export const setCurrency = value => {
         },
     }
 }
+
+
+export const setProduct = value => {
+    return {
+        type: 'setSelectedProduct',
+        payload: {
+            value:value
+        },
+    }
+}
+

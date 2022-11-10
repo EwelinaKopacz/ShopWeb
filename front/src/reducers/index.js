@@ -1,6 +1,7 @@
 const initState = {
-    category: '',
-    currency: '',
+    category: "",
+    currency: "",
+    product: {},
 }
 
 const reducer = (state = initState, action) => {
@@ -16,6 +17,12 @@ const reducer = (state = initState, action) => {
                 ...state,
                 currency: action.payload.value
         }
+
+        case 'setSelectedProduct':
+            return {
+                ...state,
+                product:action.payload.value
+            }
 
         default:
             return state;

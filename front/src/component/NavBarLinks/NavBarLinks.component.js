@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import {StyledNavUl, StyledNavLi, StyledNavLink} from './NavBarLinks.styled'
-import { v4 as uuid } from 'uuid';
 import client from '../../util/apollo-client';
 import { getCategories} from '../../query/queries-graphql';
 
@@ -9,18 +8,21 @@ import { setCategory } from '../../actions';
 
 class NavBarLinks extends PureComponent {
         state = {
-            selectedCat: '', // to chyba nie jest potrzebne ?
             categories: [],
         }
 
     componentDidMount(){
-        this.fetchQuery();
+        this.fetchCategories();
     }
 
-    async fetchQuery (){
+    async fetchCategories (){
+        const {addPickedCategory} = this.props;
         const response = await client.query({
             query:getCategories
         });
+
+        const defaultCat = response.data.categories[0].name;
+        addPickedCategory(defaultCat);
 
         this.setState ({
             categories: [...response.data.categories]
@@ -30,9 +32,6 @@ class NavBarLinks extends PureComponent {
     handleClick(e){
         const {addPickedCategory} = this.props;
         const selectedCategory = e.target.name
-        this.setState({
-            selectedCat:selectedCategory // to chyba nie jest potrzebne ?
-        })
         addPickedCategory(selectedCategory);
     }
 
@@ -41,10 +40,10 @@ class NavBarLinks extends PureComponent {
         return (
             <StyledNavUl>
                 {categories.map(({name}) => (
-                    <StyledNavLi key={uuid()}>
+                    <StyledNavLi key={name}>
                         <StyledNavLink
                             to={`/category/${name}`}
-                            activeClassName="active"
+                            activeclassname="active"
                             onClick={this.handleClick.bind(this)}
                             name={name}>
                             {name}
@@ -56,8 +55,14 @@ class NavBarLinks extends PureComponent {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+      pickedCategory: state.category,
+    }
+}
+
 const mapDispatchToProps = dispatch => ({
     addPickedCategory:(value) => dispatch(setCategory(value))
 })
 
-export default connect (null, mapDispatchToProps)(NavBarLinks);
+export default connect (mapStateToProps, mapDispatchToProps)(NavBarLinks);

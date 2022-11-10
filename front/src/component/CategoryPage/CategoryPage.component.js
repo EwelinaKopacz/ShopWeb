@@ -6,28 +6,12 @@ import StyledCategoryPage from "./CategoryPage.styled";
 
 
 class CategoryPage extends PureComponent {
-    state = {
-        currCategory: ""
-    }
-
-    componentDidMount(){
-        this.setCurrCategory();
-    }
-
-    setCurrCategory(){
-        const {pickedCategory} = this.props;
-        if(pickedCategory === ""){
-            this.setState({
-                currCategory:"All"
-            })
-        }
-    }
 
     render() {
         const {pickedCategory} = this.props;
         return (
             <StyledCategoryPage>
-                {pickedCategory ? <CategoryName catName={pickedCategory}/> : <CategoryName catName='All'/> }
+                <CategoryName catName={pickedCategory}/>
                 <ProductsList/>
             </StyledCategoryPage>
         );

@@ -5,6 +5,7 @@ import GlobalStyle from '../Styled/Global.styled';
 import StyledAppDiv from './App.styled';
 import Home from '../../views/Home';
 import Category from '../../views/Category';
+import Product from '../../views/Product';
 
 class App extends PureComponent {
   render() {
@@ -14,11 +15,11 @@ class App extends PureComponent {
         <GlobalStyle/>
         <StyledAppDiv>
           <Routes>
-              <Route exact path="/" element={<Home/>}/>
-              <Route exact path="/category/:category" element={<Category/>}/>
-              {/* <Route exact path="/product/:id"><Product></Route>
-              <Route exact path="/cart"><Cart></Route> */}
-              {/* <CategoryPage/> */}
+              <Route path="/" element={<Home/>}>
+                <Route path="/category/:category" element={<Category/>}/>
+              </Route>
+              <Route path="/product/:id" element={<Product/>}/>
+              {/* <Route path="/cart" element={<Cart>}/> */}
           </Routes>
         </StyledAppDiv>
       </>

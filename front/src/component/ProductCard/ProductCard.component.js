@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { setProduct } from '../../actions';
+import { Link } from 'react-router-dom';
 import { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv,
          StyledProductImg, StyledProductContentDiv, StyledProductName,
          StyledProductPrice, StyledCartBtn, StyledBtnImg,
-         StyledOverlayOutOfStock, StyledOverlayOutOfStockText
+         StyledOverlayOutOfStock, StyledOverlayOutOfStockText,StyledProductBtn
         } from './ProductCard.styled';
 
 import emptyCartIcon from '../../assets/empty-cart-white.svg';
@@ -29,24 +31,33 @@ class ProductCard extends PureComponent {
         this.setState({hover:false})
     }
 
+    showProduct(product){
+        const {addPickedProduct} = this.props;
+        addPickedProduct(product);
+    }
+
     render(){
         const {item} = this.props;
         const {hover}= this.state;
-        console.log(this.state.hover);
         return(
             <StyledProductDiv
                 onMouseOver={this.mouseOver.bind(this)}
                 onMouseLeave={this.mouseLeave.bind(this)}
+                key={item.id}
             >
                 <StyledProductCardDiv>
-                    <StyledProductImgDiv >
-                        <StyledProductImg src={item.gallery[0]} />
-                    </StyledProductImgDiv>
+                    <Link to={`product/${item.id}`}>
+                        <StyledProductBtn onClick={()=>this.showProduct(item)}>
+                            <StyledProductImgDiv >
+                                <StyledProductImg src={item.gallery[0]} />
+                            </StyledProductImgDiv>
 
-                    <StyledProductContentDiv>
-                        <StyledProductName>{item.name}</StyledProductName>
-                        <StyledProductPrice>{this.renderPrices()}</StyledProductPrice>
-                    </StyledProductContentDiv>
+                            <StyledProductContentDiv>
+                                <StyledProductName>{item.name}</StyledProductName>
+                                <StyledProductPrice>{this.renderPrices()}</StyledProductPrice>
+                            </StyledProductContentDiv>
+                        </StyledProductBtn>
+                    </Link>
 
                     {hover && item.inStock && ( // zastanowic sie czy nie zrobic komponentu dla btn cart
                             <StyledCartBtn>
@@ -75,4 +86,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect (mapStateToProps, null) (ProductCard);
+const mapDispatchToProps = dispatch => ({
+    addPickedProduct:(value) => dispatch(setProduct(value))
+})
+
+export default connect (mapStateToProps, mapDispatchToProps) (ProductCard);

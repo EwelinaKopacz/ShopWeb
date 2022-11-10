@@ -111,8 +111,12 @@ const StyledOverlayOutOfStockText = styled.span`
     font-size: var(--fs-text-outofstock);
     line-height: 38px;
     color: var(--clr-text-outofstock);
+`;
 
+const StyledProductBtn = styled.span`
+    background:transparent;
+    border:none;
 `;
 
 
-export { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName, StyledProductPrice,StyledCartBtn, StyledOverlayOutOfStock,StyledOverlayOutOfStockText,StyledBtnImg };
+export { StyledProductDiv, StyledProductCardDiv, StyledProductImgDiv, StyledProductImg, StyledProductContentDiv, StyledProductName, StyledProductPrice,StyledCartBtn, StyledOverlayOutOfStock,StyledOverlayOutOfStockText,StyledBtnImg, StyledProductBtn };
